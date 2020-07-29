@@ -1,0 +1,8 @@
+{
+  "name": "litesoftware",
+  "version": "0.0.1",
+  "description": "litesoftware website",
+  "dependencies": {
+    "express": "^4.10.2"
+  }
+}

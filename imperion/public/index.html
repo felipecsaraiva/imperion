@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+    <title>Imperion - Jogo de ação e estratégia Online</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1, IE=9">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="robots" content="noindex,nofollow" />
+
+    <link rel="stylesheet" href="css/styles.css" type="text/css" charset="utf-8" />
+    <script src="js/phaser.min.js"></script>
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="src/Boot.js"></script>
+    <script src="src/Preloader.js"></script>
+    <script src="src/NewPlayer.js"></script>
+    <script src="src/Main.js"></script>
+    <script src="src/Game.js"></script>
+	<script>
+		window.onbeforeunload = function (e) {
+		
+			$.post( serverlink+"update.php", { uId: aplayer.id, tipo: 'leave', hp: aplayer.hp, mp: aplayer.mp }, function(ev){
+				console.log(ev);
+			} ).fail(function() {
+				console.log( "error" );
+			});
+/*			var confirmationMessage = 'Confirmar esta ação? ';
+			confirmationMessage += 'Ao sair desta página as informações serão perdidas.';
+
+			(e || window.event).returnValue = confirmationMessage; //Gecko + IE
+			return confirmationMessage; //Gecko + Webkit, Safari, Chrome etc.*/
+		};
+	</script>
+</head>
+<body>
+<script>
+    (function(){
+        var game = new Phaser.Game(1024, 600, Phaser.AUTO, 'Imperion');
+        game.state.add('Boot', Imperion.Boot);
+        game.state.add('Preloader', Imperion.Preloader);
+        game.state.add('NewPlayer', Imperion.NewPlayer);
+        game.state.add('Main', Imperion.Main);
+        game.state.add('Game', Imperion.Game);
+        game.state.start('Boot');
+    })();
+</script>
+<div id="Imperion">
+	<div id="novo_personagem">
+		<p>
+			<label>Nome:</label>
+			<input id="tbNome" type="text"/>
+		</p>
+	</div>
+</div>
+</body>
+</html>

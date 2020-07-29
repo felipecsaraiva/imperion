@@ -1,0 +1,59 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+body {
+    margin: 0;
+	padding:0;
+	padding-top: 50px;
+    background: #181818;
+	background-image: url('../assets/background/full.png');
+	background-position: center top;
+	font-family: 'Open Sans', sans-serif;
+}
+
+#novo_personagem{
+	color: #F0F0F0;
+	position: absolute;
+	top: 450px;
+	left: 50%;
+	width: 210px;
+	margin-left: -100px;
+}
+
+
+#novo_personagem label {
+	display: block;
+}
+
+
+/* Textbox */
+
+input, textarea	
+{
+	width: 160px;
+	padding: 10px;
+	padding-left: 10px;
+	color:#161616;
+	border:1px solid #BCBCBC;
+	background:#fff;
+	behavior: url(js/PIE.htc);
+}
+				
+textarea		{overflow:hidden; font-family: 'Open Sans', sans-serif; color:#161616;}
+.textarea
+{
+    color: #161616;
+}
+
+input:hover,
+textarea:hover,
+input:focus,
+textarea:focus 	{background:#fCfCfC;
+}
+
+input:focus,
+textarea:focus 
+{
+	color: #161616;
+}
+
+/* Textbox */
